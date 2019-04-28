@@ -16,7 +16,7 @@ const app = express();
 app.use(cors());
 app.use(morgan('tiny'));
 app.use(bodyParser.urlencoded());
-app.use('/', router);
+app.use('/api', router);
 
 app.listen(6200);
 console.log('API started');
