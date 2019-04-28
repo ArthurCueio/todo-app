@@ -12,3 +12,12 @@ services:
     image: mongo
     ports:
       - 27017:27017
+  client:
+    build: ./client
+    volumes:
+      - ./client:/usr/app
+    ports:
+      - 3000:3000
+    depends_on:
+      - db
+      - api
