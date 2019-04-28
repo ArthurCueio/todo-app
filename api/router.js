@@ -36,4 +36,22 @@ router.get('/list/todo', (req, res, next) => {
   });
 });
 
+router.post('/del/todo', (req, res, next) => {
+  if (!req.body.id) {
+    res.sendStatus(400);
+  } else {
+    Todo.findByIdAndDelete(req.body.id, (err, docs) => {
+      if (err) {
+        next(err);
+      } else {
+        if (!docs) {
+          res.sendStatus(400);
+        } else {
+          res.sendStatus(200);
+        }
+      }
+    });
+  }
+});
+
 module.exports = router;
