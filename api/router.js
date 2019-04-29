@@ -6,7 +6,7 @@ const Todo = require('./models/todo');
 const router = new express.Router();
 
 router.post('/add/todo', (req, res, next) => {
-  if (!req.body.desc) {
+  if (req.body.desc === 'undefined' || !req.body.desc) {
     res.sendStatus('400');
   } else {
     const newTodo = new Todo({
@@ -37,7 +37,7 @@ router.get('/list/todo', (req, res, next) => {
 });
 
 router.post('/del/todo', (req, res, next) => {
-  if (!req.body.id) {
+  if (req.body.id === 'undefined' || !req.body.id) {
     res.sendStatus(400);
   } else {
     Todo.findByIdAndDelete(req.body.id, (err, docs) => {
