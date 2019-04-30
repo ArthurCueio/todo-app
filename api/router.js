@@ -12,9 +12,6 @@ router.post('/add/todo', (req, res, next) => {
     const newTodo = new Todo({
       desc: req.body.desc,
       created: moment().format('DD MM YYYY HH:mm'),
-      due: req.body.due ?
-           moment(req.body.due).format('DD MM YYYY HH:mm') :
-           null,
     });
     newTodo.save( (err, docs) => {
       if (err) {
