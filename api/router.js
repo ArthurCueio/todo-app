@@ -6,10 +6,11 @@ const Todo = require('./models/todo');
 const router = new express.Router();
 
 router.post('/add/todo', (req, res, next) => {
-  if (req.body.desc === 'undefined' || !req.body.desc) {
+  if (req.body.title === 'undefined' || !req.body.title) {
     res.sendStatus('400');
   } else {
     const newTodo = new Todo({
+      title: req.body.title,
       desc: req.body.desc,
       created: moment().format('DD MM YYYY HH:mm'),
     });
