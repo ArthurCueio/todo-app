@@ -14,7 +14,7 @@ class Editor extends React.Component {
           name="desc"
           cols="30"
           rows="5"
-          placeholder="To-do description"
+          placeholder="To-do description (optional)"
           value={this.props.descText}
           onChange={this.props.handleChange}>
         </textarea>
