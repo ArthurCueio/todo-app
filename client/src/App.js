@@ -8,7 +8,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       items: [],
-      editorText: '',
+      descText: '',
     };
 
     this.updateList = this.updateList.bind(this);
@@ -38,13 +38,13 @@ class App extends React.Component {
   }
   handleChange(event) {
     this.setState({
-      editorText: event.target.value,
+      descText: event.target.value,
     });
   }
   handleSubmit(event) {
     event.preventDefault();
     const params = new URLSearchParams();
-    params.append('desc', this.state.editorText);
+    params.append('desc', this.state.descText);
     fetch('http://localhost:6200/api/add/todo',
         {
           method: 'post',
@@ -55,7 +55,7 @@ class App extends React.Component {
             throw new Error(`Error while fetching list: ${response.statusText}`);
           } else {
             this.setState({
-              editorText: '',
+              descText: '',
             });
             this.updateList();
           }
@@ -93,7 +93,7 @@ class App extends React.Component {
         <Editor
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
-          text={this.state.editorText}/>
+          descText={this.state.descText}/>
       </div>
     );
   }

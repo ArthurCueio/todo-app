@@ -9,7 +9,7 @@ class Editor extends React.Component {
           cols="30"
           rows="5"
           placeholder="To-do description"
-          value={this.props.text}
+          value={this.props.descText}
           onChange={this.props.handleChange}>
         </textarea>
         <button type="submit">Create to-do</button>
