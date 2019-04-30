@@ -5,7 +5,7 @@ class List extends React.Component {
     const rows = this.props.items.map( (x) => {
       return (
         <li className="list-item" key={x._id}>
-          {x.desc}
+          {x.title}
           <button
             value={x._id}
             onClick={this.props.handleDeleteButton}
