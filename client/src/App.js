@@ -9,6 +9,7 @@ class App extends React.Component {
     this.state = {
       items: [],
       descText: '',
+      titleText: '',
     };
 
     this.updateList = this.updateList.bind(this);
@@ -45,6 +46,7 @@ class App extends React.Component {
     event.preventDefault();
     const params = new URLSearchParams();
     params.append('desc', this.state.descText);
+    params.append('title', this.state.titleText);
     fetch('http://localhost:6200/api/add/todo',
         {
           method: 'post',
@@ -56,6 +58,7 @@ class App extends React.Component {
           } else {
             this.setState({
               descText: '',
+              titleText: '',
             });
             this.updateList();
           }
@@ -93,7 +96,8 @@ class App extends React.Component {
         <Editor
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
-          descText={this.state.descText}/>
+          descText={this.state.descText}
+          titleText={this.state.titleText}/>
       </div>
     );
   }

@@ -4,6 +4,12 @@ class Editor extends React.Component {
   render() {
     return (
       <form onSubmit={this.props.handleSubmit}>
+        <input
+          type="text"
+          name="title"
+          placeholder="To-do title"
+          value={this.props.titleText}
+          onChange={this.props.handleChange}/>
         <textarea
           name="desc"
           cols="30"
