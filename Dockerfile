@@ -1,7 +1,7 @@
 FROM node:dubnium-alpine
 
-RUN mkdir -p /usr/app/
-WORKDIR /usr/app
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
 
 RUN npm -g install nodemon
 

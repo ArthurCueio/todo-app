@@ -1,9 +1,9 @@
 version: '3'
 services:
   api:
-    build: ./api
+    build: .
     volumes:
-      - ./api:/usr/app
+      - .:/usr/src/app
     ports:
       - 6200:6200
     depends_on:
@@ -15,7 +15,7 @@ services:
   client:
     build: ./client
     volumes:
-      - ./client:/usr/app
+      - ./client:/usr/src/app
     ports:
       - 3000:3000
     depends_on:
