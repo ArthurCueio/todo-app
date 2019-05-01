@@ -49,6 +49,8 @@ class App extends React.Component {
           titleText: event.target.value,
         });
         break;
+      default:
+        break;
     }
   }
   handleSubmit(event) {
