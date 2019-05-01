@@ -13,12 +13,3 @@ form {
   flex-direction: column;
   width: 300px;
 }
-
-ul li {
-  margin: 0.25em;
-}
-
-button.delete-button {
-  color: red;
-  margin-left: 0.5em;
-}
