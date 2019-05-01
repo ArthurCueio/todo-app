@@ -1,7 +1,7 @@
 const express = require('express');
 const moment = require('moment');
 
-const Todo = require('./models/todo');
+const Todo = require('../models/todo');
 
 const router = new express.Router();
 
