@@ -38,9 +38,18 @@ class App extends React.Component {
         });
   }
   handleChange(event) {
-    this.setState({
-      descText: event.target.value,
-    });
+    switch (event.target.name) {
+      case 'desc':
+        this.setState({
+          descText: event.target.value,
+        });
+        break;
+      case 'title':
+        this.setState({
+          titleText: event.target.value,
+        });
+        break;
+    }
   }
   handleSubmit(event) {
     event.preventDefault();
