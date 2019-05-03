@@ -18,5 +18,6 @@ app.use(morgan('tiny'));
 app.use(bodyParser.urlencoded());
 app.use('/api', apiRouter);
 
-app.listen(process.env.PORT);
-console.log('API started');
+app.listen(process.env.PORT, () => {
+  console.log('API started');
+});
