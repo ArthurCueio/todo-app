@@ -15,7 +15,7 @@ const app = express();
 
 app.use(cors());
 app.use(morgan('tiny'));
-app.use(bodyParser.urlencoded());
+app.use(bodyParser.urlencoded({extended: false}));
 app.use('/api', apiRouter);
 
 app.listen(process.env.PORT, () => {
